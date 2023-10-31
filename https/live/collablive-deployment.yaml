@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: collablive-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: collablive
+  template:
+    metadata:
+      labels:
+        app: collablive
+    spec:
+      containers:
+      - name: collablive
+        image: hiroyukikumazawa/smartminds_frontend:1.0
+        ports:
+        - containerPort: 80
