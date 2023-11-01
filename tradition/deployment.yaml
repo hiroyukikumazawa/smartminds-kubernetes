@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: smartminds-frontend
+  namespace: ingress-nginx
   labels:
     app.kubernetes.io/name: smartminds_frontend
   annotations:
@@ -17,7 +18,7 @@ spec:
         app.kubernetes.io/name: smartminds_frontend
     spec:
       containers:
-      - image: hiroyukikumazawa/smartminds_frontend:2.0
+      - image: hiroyukikumazawa/smartminds_frontend:latest
         name: smartminds-frontend
         imagePullPolicy: Always
         ports:
